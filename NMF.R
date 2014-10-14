@@ -7,7 +7,7 @@ rm(list = ls())
 datLoc <- "/Users/Ash/Documents/database/bagofwords/docword.kos.txt"
 vocLoc <- "/Users/Ash/Documents/database/bagofwords/vocab.kos.txt"
 
-nb <- 100 # How many groups to formget
+nb <- 5 # How many groups to form
 
 print("Loading data...")
 lib.n <- read.csv(datLoc,skip=0,nrows=1,header=F)
@@ -30,8 +30,21 @@ cat("Size is",dim(d.wide))
 
 tm1 <- system.time({
   print("Performing NMF",)
-  res <- nmf(d.wide,nb)
+  res <- nmf(d.wide,nb,.options='v3')
 })
 
 w <- basis(res)
 h <- coef(res)
+
+# function to get n biggest values from a list
+getMaxN <- function(x, n=10) {
+  nx <- length(x)
+  p <- nx-n
+  xp <- sort(x, partial=p)[p]
+  which(x > xp)
+}
+
+cluster.topwords <- data.frame();
+for (i in 1:nb) {
+  cluster.topwords[i] <- voc[getMaxN(w[,i],20),1]
+}
