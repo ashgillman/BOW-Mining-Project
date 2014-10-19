@@ -10,15 +10,15 @@ mynmf <- function(V, r, maxIts=1000, precision=0.1) {
   # progress bar
   pb <- txtProgressBar(min=0, max=maxIts)
 
-  # iterate
+  # iterate (multiplicative update, Euclidean cost fn)
   for (i in 1:maxIts) {
     W <- W * (V %*% t(H)) / (W %*% H %*% t(H))
     H <- H * (t(W) %*% V) / (t(W) %*% W %*% H)
+    setTxtProgressBar(pb, i)
     cost <- (V - W %*% H) ^ 2
     if (max(cost) < precision) {
       break
     }
-    setTxtProgressBar(pb, i)
   }
   close(pb)
 
