@@ -2,7 +2,7 @@
 # W from nmf
 # voc: vocabulary
 
-library(NMF)
+
 library(wordcloud)
 library(RColorBrewer)
 
@@ -16,15 +16,15 @@ getMaxN <- function(x, n=10) {
   which(x > xp)
 }
 
+normalise <- function(x) {
+  return((x-min(x)) / (max(x)-min(x)))
+}
+
 topwords.id <- matrix(nrow=numWords, ncol=nb);
 topwords.freq <- matrix(nrow=numWords, ncol=nb);
 for (i in 1:nb) {
   topwords.id[, i] <- unlist(getMaxN(W[, i], numWords))
   topwords.freq[, i] <- W[topwords.id[, i], i]
-}
-
-normalise <- function(x) {
-  return((x-min(x)) / (max(x)-min(x)))
 }
 
 pal <- brewer.pal(9, "PuBuGn")

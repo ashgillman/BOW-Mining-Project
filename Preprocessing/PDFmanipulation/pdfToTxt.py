@@ -15,6 +15,7 @@ def convert_pdf_to_text(path):
     codec = 'utf-8'
     laparams = LAParams()
     device = TextConverter(resourceManager, retstr, codec=codec, laparams=laparams)
+
     fp = file(path, 'rb')
     interpreter = PDFPageInterpreter(resourceManager, device)
     password = ""
@@ -76,4 +77,5 @@ def convert_deep(path):
 
 
 path = "/Users/Ash/Dropbox/Uni/2014/CP3300/BOW/data/"
-convert_deep(path)
+#convert_deep(path)
+text = pdf_to_words("/Users/Ash/Dropbox/Uni/2014/CP3300/BOW/data/Speech/OPENBLISSART.pdf")

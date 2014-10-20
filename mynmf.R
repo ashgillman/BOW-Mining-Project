@@ -24,6 +24,8 @@ mynmf <- function(V, r, maxIts=1000, precision=0.1) {
 
   return(list(W, H))
 }
+
+# Function to enable multiple returns
 list <- structure(NA,class="result")
 "[<-.result" <- function(x,...,value) {
   args <- as.list(match.call())
@@ -36,9 +38,15 @@ list <- structure(NA,class="result")
   x
 }
 
-V <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow=3, byrow=TRUE)
-nb <- 2
+test_mynmf <- function() {
+  V <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow=3, byrow=TRUE)
+  nb <- 2
 
-list[W, H] <- mynmf(V, nb)
+  list[W, H] <- mynmf(V, nb)
 
-print(W %*% H)
+  print(W %*% H)
+}
+
+form_groups <- function(H) {
+  return(apply(H,2,which.max))
+}
