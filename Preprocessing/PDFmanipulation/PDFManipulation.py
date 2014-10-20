@@ -7,16 +7,15 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
 from cStringIO import StringIO
 from pdfminer.layout import LAParams
-from pdfminer.pdfparser import PDFParser, PDFDocument
+from pdfminer.pdfparser import PDFParser
 from pdfminer.pdftypes import resolve1
-from xmp import xmp_to_dict
 from pdfminer.converter import TextConverter
 
 
 '''"C:\Users\Dean\Documents\TestPDF's" +'''
 
 def get_file_paths():
-    sysPath = "\*.pdf"
+    sysPath = "/*.pdf"
     user_input = raw_input("Enter the document paths:")
     fullPath = user_input + sysPath
     fileArray = glob.glob(fullPath)
@@ -73,7 +72,7 @@ if __name__ == "__main__":
     file_path_array = get_file_paths()
     for f in file_path_array:
         text = str_processing(f)
-        title = get_title_metadata(f)
+        #title = get_title_metadata(f)
         csv_file = open(title, wb)
         writer = csv.writer(csv_file)
         writer.writerows(text)

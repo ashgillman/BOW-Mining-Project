@@ -1,6 +1,6 @@
-.Rproj.user
-.Rhistory
-.RData
+.*
 
-./data
-/.data/*
+data
+data/*
+
+*.pyc
