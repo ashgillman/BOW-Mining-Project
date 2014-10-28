@@ -41,6 +41,7 @@ def convert_pdf_to_text(path):
     retstr.close()
     return str
 
+'''
 def get_title_metadata(file_path):
     fp = open('mypdf.pdf', 'rb')
     parser = PDFParser(fp)
@@ -55,6 +56,7 @@ def get_title_metadata(file_path):
         metadata = resolve1(doc.catalog['Metadata']).get_data()
         print xmp_to_dict(metadata)
 
+'''
 
 def str_processing(file):
     word_list = []
