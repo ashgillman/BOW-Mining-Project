@@ -22,7 +22,7 @@ def convert_pdf_to_text(path):
     maxPages = 0
     caching = True
     pageNumbers = set()
-    for page in PDFPage.get_pages(fp, pageNumbers, maxpages=maxPages, password=password,caching=caching, check_extractable=True):
+    for page in PDFPage.get_pages(fp, pageNumbers, maxpages=maxPages, password=password, caching=caching, check_extractable=True):
         interpreter.process_page(page)
     fp.close()
     device.close()

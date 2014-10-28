@@ -29,8 +29,8 @@
       <file leaf-file-name="pdfToTxt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdfToTxt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33426183" vertical-offset="195" max-vertical-offset="1290">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.9401114" vertical-offset="195" max-vertical-offset="1290">
+              <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
               <folding>
                 <element signature="e#47#77#0" expanded="true" />
               </folding>
@@ -541,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pdfToTxt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33426183" vertical-offset="195" max-vertical-offset="1290">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.9401114" vertical-offset="195" max-vertical-offset="1290">
+          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
           <folding>
             <element signature="e#47#77#0" expanded="true" />
           </folding>
